@@ -11,6 +11,24 @@ import java.util.Scanner;
 import java.util.Set;
 
 
+class Station {
+    String name;
+    Set<String> lines;
+
+    public Station(String name) {
+        this.name = name;
+        this.lines = new HashSet<>();
+    }
+
+    public void addLine(String line) {
+        lines.add(line);
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + lines;
+    }
+}
 
 class LineSegment {
     String line;
