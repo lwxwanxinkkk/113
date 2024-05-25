@@ -58,18 +58,7 @@ public class SubwaySystemGUI {
         JOptionPane.showMessageDialog(null, "Transfer Stations: " + transferStations);
     }
 
-    private void showNearbyStations() {
-        String stationName = JOptionPane.showInputDialog("输入站点名称:");
-        String distanceStr = JOptionPane.showInputDialog("输入距离:");
-        double distance = Double.parseDouble(distanceStr);
-
-        try {
-            Map<Station, Double> nearbyStations = subwaySystem.getNearbyStations(stationName, distance);
-            JOptionPane.showMessageDialog(null, "Nearby Stations: " + nearbyStations);
-        } catch (IllegalArgumentException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }
+   
 
     private void showAllPaths() {
         String startStation = JOptionPane.showInputDialog("输入起点站:");
