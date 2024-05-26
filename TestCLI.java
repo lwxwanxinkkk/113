@@ -57,18 +57,7 @@ class SubwaySystem {
         lineSegments = new ArrayList<>();
         loadSubwayData(filePath);
     }
- private void showNearbyStations() {
-        String stationName = JOptionPane.showInputDialog("输入站点名称:");
-        String distanceStr = JOptionPane.showInputDialog("输入距离:");
-        double distance = Double.parseDouble(distanceStr);
 
-        try {
-            Map<Station, Double> nearbyStations = subwaySystem.getNearbyStations(stationName, distance);
-            JOptionPane.showMessageDialog(null, "Nearby Stations: " + nearbyStations);
-        } catch (IllegalArgumentException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }
     private void loadSubwayData(String filePath) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String line;
